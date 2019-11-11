@@ -11,29 +11,51 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <Grid Margin="8,8,8,8" BackgroundColor="White">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                           
                             <Label Text="{Binding Combustible}" 
                                    Grid.Column="0"
                                    Grid.Row="0"
                                    TextColor="Black"
-                                   FontAttributes="Bold"/>
-                            <Label Text="{Binding Precio}" Grid.Column="0" Grid.Row="1"/>
-
-                                <Label Text="{Binding Variante}"
-                                       Grid.Column="1" 
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="StartAndExpand"/>
+                            <Label Text="{Binding Precio}" 
+                                   Grid.Column="0"
+                                   Grid.Row="1"
+                                   HorizontalOptions="StartAndExpand"/>
+                                <StackLayout 
+                                       Grid.Column="1"
                                        Grid.Row="0"
                                        Grid.RowSpan="2"
-                                       HorizontalOptions="EndAndExpand"
-                                       VerticalOptions="Center"/>
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    BackgroundColor="{Binding Color}">
+
+                                    <Label Text="&#nf62;"
+                                           IsVisible="{Binding VisibleUp}"
+                                           FontFamily="{StaticResource FontAwesomeSolid}"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           FontSize="18"/>
+                                    <Label Text="&#xf063;"
+                                           IsVisible="{Binding VisibleDown}"
+                                            FontFamily="{StaticResource FontAwesomeSolid}"/>
+                                    <Label Text="&#xf04c;"
+                                           IsVisible="{Binding Visible}"
+                                            FontFamily="{StaticResource FontAwesomeSolid}"/>
+                                    <Label Text="{Binding Variante}"
+                                       HorizontalOptions="End"
+                                       VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                </StackLayout>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

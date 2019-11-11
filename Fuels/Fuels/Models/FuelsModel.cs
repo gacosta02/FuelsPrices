@@ -11,7 +11,50 @@ namespace Fuels.Models
             public string Precio { get; set; }
             public string Variante { get; set; }
             public string Icono { get; set; }
-            public string Color { get; set; }
+           public bool Visible
+        {
+            get
+            {
+                if (Icono == "pause")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        public bool VisibleDown
+        {
+            get
+            {
+                if (Icono == "trending_down")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool VisibleUp
+        {
+            get
+            {
+                if (Icono == "trending_up")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        public string Color { get; set; }
         }
 
 
